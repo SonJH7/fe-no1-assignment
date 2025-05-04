@@ -1,5 +1,4 @@
-﻿// src/js/api.js
-import { TMDB_API_KEY } from './config.js';
+﻿import { TMDB_API_KEY } from './config.js';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 
@@ -15,7 +14,6 @@ async function _get(endpoint) {
         const data = await res.json();
 
         if (!res.ok) {
-            // TMDB 에러 메시지 포함
             throw new Error(data.status_message || 'API 호출 실패');
         }
         return data;
@@ -45,7 +43,7 @@ export async function searchMovies(query) {
     }
 }
 
-/* 영화 상세 정보 조회 (한국어) */
+/* 영화 상세 정보 조회 한국어로,, */
 export async function getMovieDetail(id) {
     try {
         return await _get(`/movie/${id}?language=ko`);

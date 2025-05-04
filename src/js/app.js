@@ -107,10 +107,9 @@ container.addEventListener('click', async e => {
     }
 });
 
-// 4) “북마크 보기” 클릭 핸들러
+// 4) 북마크 보기 클릭 핸들러
 viewBookmarksBtn.addEventListener('click', async () => {
     const ids = loadBookmarks();
-    // 로딩 표시
     container.innerHTML = '<p>로딩 중…</p>';
 
     if (ids.length === 0) {
